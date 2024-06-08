@@ -9,13 +9,13 @@
 
     <Button
         android:id="@+id/btnListaBanco"
-        android:layout_width="160dp"
-        android:layout_height="38dp"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/lblTITULO"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="6dp"
         android:layout_toEndOf="@+id/textView"
         android:onClick="getListaBancos"
         android:text="Mostrar" />
@@ -58,9 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblTITULO"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="90dp"
-        android:text="Lista de Usuarios: "
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="96dp"
+        android:text="Lista de Categorias Turismo: "
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
