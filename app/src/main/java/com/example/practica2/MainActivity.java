@@ -44,19 +44,7 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
     }
 
 
-     public void btnEnviarWs(View view){
-        TextView txtUsuario=(TextView) findViewById(R.id.txtUsuario);
-        TextView txtClaves=(TextView) findViewById(R.id.txtClave);
 
-         Map<String, String> datos = new HashMap<String, String>();
-         WebService ws= new WebService(
-                 "https://revistas.uteq.edu.ec/ws/login.php?"
-                         + "usr=" +txtUsuario.getText().toString()
-                         + "&pass=" + txtClaves.getText().toString(),
-                 datos, MainActivity.this, MainActivity.this);
-         ws.execute("GET");
-
-     }
     @Override
     public void processFinish(String result) throws JSONException {
 
@@ -64,42 +52,15 @@ public class MainActivity extends AppCompatActivity implements Asynchtask {
 
     }
 
-    public void btnIngreVolly(View view){
-        TextView txtUsuario=(TextView) findViewById(R.id.txtUsuario);
-        TextView txtClaves=(TextView) findViewById(R.id.txtClave);
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="https://revistas.uteq.edu.ec/ws/login.php?" +
-                "usr=" +txtUsuario.getText().toString()
-                + "&pass=" + txtClaves.getText().toString();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        txtVis.setText("Respuesta: "+ response);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        txtVis.setText("That didn't work!");
-                    }
-                });
-        queue.add(stringRequest);
-
-    }
 
     public void getListaBancos(View vies){
 
         Map<String, String> datos = new HashMap<String, String>();
 
         WebService ws= new
-                WebService("https://api-uat.kushkipagos.com/transfer/v1/bankList",
+                WebService("https://uealecpeterson.net/turismo/categoria/getlistadoCB",
                 datos, MainActivity.this, new ProcesaListaBanco(txtVis));
 
-        ws.execute("GET","Public-Merchant-Id","84e1d0de1fbf437e9779fd6a52a9ca18");
+        ws.execute("GET");
     }
 }

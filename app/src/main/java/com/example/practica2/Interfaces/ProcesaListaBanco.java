@@ -18,14 +18,18 @@ public class ProcesaListaBanco implements Asynchtask {
     public void processFinish(String result) throws JSONException {
         //txtVis.setText("Respuesta:" + result);
 
-        String ListaBancos="";
+        String Turismo="";
         JSONArray JSONlista = new JSONArray(result);
         for(int i=0; i< JSONlista.length();i++){
-            JSONObject banco= JSONlista.getJSONObject(i);
-            ListaBancos += banco.getString("code")
-                    + "-" + banco.getString("name") + "\n";
+            JSONObject categ=  JSONlista.getJSONObject(i);
+            Turismo += categ.getString("dt_rowid")
+                    + "\n" + categ.getString("id")
+                    + "\n" + categ.getString("descripcion")
+                    + "\n\n" ;
+
+
         }
-        txtVis.setText("Lista Bancos: \n" + ListaBancos);
+        txtVis.setText(Turismo);
 
     }
 }
